@@ -1,0 +1,1 @@
+Python Project for File management ,takes in an input folder seperates it as per the file type and then puts them in new folder
