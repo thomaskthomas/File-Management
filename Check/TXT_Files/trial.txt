@@ -1,0 +1,33 @@
+import random
+import time
+class GobackN:
+    def __init__(self,window_size,total_frames):
+        self.window_size=window_size
+        self.total_frames=total_frames
+        self.base=0
+        self.nextframetosend=0
+        self.frames=list(range(1,total_frames))
+    def send_frame(self,frame):
+        print(f"SEnding frame{frame}")
+    def recive_ack(self,frame):
+        ack=random.choice([True,False])
+        if ack:
+            print("Acknoledgement recived{frame})
+            self.base+=1
+        esle:
+            print("errror")
+        return ack
+    def transmit(self):
+        while self.base<self.total_frames:
+            print(f"window: base:{base},nextframetosend{nextframetosend} windowsize {window_size}")
+            while self.nextframetosend<self.base+self.window_size and self.nextframetosend<self.total_frames:
+                self.send_frame(self.frames[self.nextframetosend])
+                self.nextframetosend+=1
+            time.sleep(2)
+        for frame in range(self.base,self.nextframetosend)
+            if not self.recive_ack(self.frames[frame]):
+                print("eror)
+                self.nextframetosend=self.base
+            break
+        if self.base==self.nextframetosend
+        print("all frames send")
